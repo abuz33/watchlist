@@ -34,6 +34,9 @@ function App() {
           <Route path="/:listName/:movieId" exact>
             <Movie />
           </Route>
+          <Route path="/notfound">
+            <NotFound />
+          </Route>
           <Route path="*">
             <NotFound />
           </Route>

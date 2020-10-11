@@ -43,6 +43,11 @@ export const MovieControls = ({ type, movie }) => {
           >
             <i className="fa-fw fa fa-times"></i>
           </button>
+          <Link to={`/watchlist/${movie.id}`}>
+            <button className="ctrl-btn">
+              <i className="fa fa-info-circle"> </i>
+            </button>
+          </Link>
         </>
       )}
     </div>

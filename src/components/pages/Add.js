@@ -10,14 +10,12 @@ export const Add = () => {
     e.preventDefault();
 
     setSearchTet(e.target.value);
-    console.log(process.env.REACT_APP_TMDB_KEY);
 
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log("add ", data);
         if (data !== undefined && !data.errors) {
           setResults(data.results);
         } else {

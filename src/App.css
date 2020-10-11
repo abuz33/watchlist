@@ -324,3 +324,14 @@ header .nav-links li:last-child {
   font-size: 3rem;
   text-align: center;
 }
+
+.page-not-found {
+  width: 50%;
+  height: 20%;
+  margin: 1rem auto;
+}
+
+.page-not-found h1 {
+  text-align: center;
+  color: black;
+}

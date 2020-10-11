@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import StarRating from "./StarRating";
 import "./movieCardSpecial.css";
+import { calculateAverage } from "../utils/calculateAverage";
 
-const MovieCard = ({ movie, average }) => {
+const MovieCard = ({ movie, comments }) => {
   const { title, overview, poster_path } = movie;
 
-  console.log("average movieCard Special", average);
   return (
     <React.Fragment>
       <div className="container__movie-card-whole">
@@ -31,11 +31,12 @@ const MovieCard = ({ movie, average }) => {
                 <p className="movie-description">{overview}</p>
                 <div className="star-rating">
                   <StarRating
-                    value={average}
+                    value={calculateAverage(comments)}
                     edit={false}
                     size={35}
                     isHalf={true}
                   />
+                  {` | `}
                 </div>
               </div>
             </div>

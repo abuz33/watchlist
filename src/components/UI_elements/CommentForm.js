@@ -10,7 +10,7 @@ const initialFormState = {
   rating: 0,
 };
 
-const CommentForm = ({ setComments, setVisible, comments }) => {
+const CommentForm = ({ setComments, comments }) => {
   const { movieId } = useParams();
   const { addCommentToMovies } = useContext(GlobalContext);
   const [commentToForward, setCommentToForward] = useState({
@@ -28,7 +28,6 @@ const CommentForm = ({ setComments, setVisible, comments }) => {
   function handleSubmit(e) {
     e.preventDefault();
     setComments([commentToForward, ...comments]);
-    setVisible(false);
     setFormState(initialFormState);
     addCommentToMovies(commentToForward);
   }
@@ -39,7 +38,6 @@ const CommentForm = ({ setComments, setVisible, comments }) => {
       ...commentToForward,
       [e.target.name]: e.target.value,
     });
-    console.log("handle change", commentToForward.rating);
   }
 
   useEffect(() => {
